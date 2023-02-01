@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,14 +17,16 @@
   <body>
     <header class="primary-header bg-primary-400">
       <div class="container">
-        <a class="fs-primary-heading" href="#">Header Logo</a>
-        <nav class="primary-navigation">
-          <ul role="list" class="nav-list">
-            <li><a href="#">header link one</a></li>
-            <li><a href="#">header link two</a></li>
-            <li><a href="#">header link three</a></li>
-          </ul>
-        </nav>
+        <div class="nav-wrapper">
+          <a class="fs-logo fw-bold" href="#">Header Logo</a>
+          <nav class="primary-navigation">
+            <ul role="list" class="nav-list">
+              <li><a href="#">header link one</a></li>
+              <li><a href="#">header link two</a></li>
+              <li><a href="#">header link three</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -32,11 +34,11 @@
       <section>
         <div class="container">
           <div class="hero bg-primary-400">
-            <div>
-              <h1 class="fs-primary-heading fw-bolder">
+            <div class="flow">
+              <h1 class="text-primary-300 fs-primary-heading fw-bolder">
                 This website is awesome
               </h1>
-              <p>
+              <p class="text-primary-500">
                 This website has some subtext that goes here under the main
                 title. It's a smaller font and the color is lower contrast
               </p>
@@ -51,50 +53,56 @@
 
       <section>
         <div class="container">
-          <h2 class="fs-secondary-heading fw-bolder">
-            Some random information.
-          </h2>
-          <div class="square">
-            <p class="subtext">
-              this is some subtext under an illustration or image
-            </p>
+          <div class="information">
+            <h2 class="text-primary-400 fs-secondary-heading fw-bolder">
+              Some random information.
+            </h2>
           </div>
-          <div class="square">
-            <p class="subtext">
-              this is some subtext under an illustration or image
-            </p>
-          </div>
-          <div class="square">
-            <p class="subtext">
-              this is some subtext under an illustration or image
-            </p>
-          </div>
-          <div class="square">
-            <p class="subtext">
-              this is some subtext under an illustration or image
-            </p>
+          <div class="squares">
+            <div class="square">
+              <p class="subtext">
+                this is some subtext under an illustration or image
+              </p>
+            </div>
+            <div class="square">
+              <p class="subtext">
+                this is some subtext under an illustration or image
+              </p>
+            </div>
+            <div class="square">
+              <p class="subtext">
+                this is some subtext under an illustration or image
+              </p>
+            </div>
+            <div class="square">
+              <p class="subtext">
+                this is some subtext under an illustration or image
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="quote bg-primary-500">
+        <div class="quote bg-primary-500 text-primary-400">
           <h3 class="fs-secondary-heading fw-light-italic">
             This is an inspiring quote, or a testimonial from a customer. Maybe
             it's just filling up space, or maybe people will actually read it.
             Who knows? All I know is that it looks nice.
           </h3>
-          <p class="thor">-Thor, God of Thunder</p>
+          <p class="thor | fs-logo fw-bold">-Thor, God of Thunder</p>
         </div>
       </section>
 
-      <section>
-        <div class="cta">
-          <h4>Call to action! It's time!</h4>
-          <p>
-            Sign up for our product by clicking that button right over there!
-          </p>
-          <button class="button">Sign up</button>
+      <section class="cta-wrapper">
+        <div class="container">
+          <div class="cta">
+            <h4 class="fs-logo fw-bold">Call to action! It's time!</h4>
+            <p>
+              Sign up for our product by clicking that button right over there!
+            </p>
+            <button class="button" data-type="border">Sign up</button>
+          </div>
         </div>
       </section>
     </main>

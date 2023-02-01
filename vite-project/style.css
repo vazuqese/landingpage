@@ -6,6 +6,7 @@
 
   --clr-accent-1: hsl(217, 91%, 60%);
   --clr-accent-2: hsl(210, 20%, 98%);
+  --clr-accent-3: hsl(217, 91%, 65%);
 
   --clr-neutral-1: hsl(214, 7%, 46%);
   --clr-neutral-2: hsl(0, 0%, 100%);
@@ -65,7 +66,6 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: var(--ff-primary);
 }
 
 /* A elements that don't have a class get default styles */
@@ -99,6 +99,9 @@ svg {
 
 /* Utility classes */
 
+.text-primary-300 {
+  color: var(--clr-accent-2);
+}
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
@@ -132,7 +135,11 @@ svg {
   font-weight: var(--fw-bolder);
 }
 .fw-light-italic {
-  font-style: var(--fw-light-italic);
+  font-style: italic;
+}
+
+.fs-logo {
+  font-size: var(--fs-500);
 }
 
 .fs-primary-heading {
@@ -143,28 +150,108 @@ svg {
   font-size: var(--fs-600);
 }
 
-/* rectangle */
+/* general styling */
+
+/* .container {
+  --max-width: 1440px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+} */
+
+.hero {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  padding: 20px 200px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 57px;
+}
+
+.squares {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 50px;
+  margin-bottom: 138px;
+}
+
+body {
+  font-family: var(--ff-body);
+}
+
+/* button */
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0.5em;
+  padding: 0.25em 2em;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-2);
+  background-color: var(--clr-accent-1);
+}
+
+.button[data-type="border"] {
+  border: 0.15em solid;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-accent-3);
+}
+
+/* navigation */
+
+.primary-header a {
+  color: var(--clr-primary-500);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 200px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-list a {
+  font-size: var(--fs-400);
+  color: var(--clr-primary-500);
+}
+
+/* shapes */
 
 .placeholder {
-  height: 238px;
-  width: 523px;
+  height: 237px;
+  width: 522px;
   color: var(--clr-neutral-2);
   background-color: var(--clr-neutral-1);
   text-align: center;
   line-height: 238px;
   font-size: var(--fs-400);
+  margin-bottom: 8.3em;
 }
 
-/* square */
-
 .square {
-  height: 170px;
-  width: 170px;
+  height: 160px;
+  width: 160px;
   border: 4px solid var(--clr-accent-1);
+  color: var(--clr-neutral-1);
   background-color: transparent;
   border-radius: 1em;
-  float: left;
-  margin: 25px;
 }
 
 .subtext {
@@ -174,8 +261,27 @@ svg {
 
 /* header */
 
-.primary-header {
+/* Utility */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 0.5em);
 }
+
+/* quote */
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 138px;
+}
+
+.thor {
+  align-items: flex-end;
+}
+
+/* cta */
 
 .cta {
   display: flex;
@@ -188,6 +294,15 @@ svg {
   background-color: var(--clr-accent-1);
 }
 
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
 .copyright {
   text-align: center;
+  color: var(--clr-primary-500);
+  font-size: var(--fs-400);
+  padding: 40px;
 }
