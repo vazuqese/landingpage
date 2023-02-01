@@ -1,97 +1,193 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  --clr-primary-400: hsl(215, 28%, 17%);
+  --clr-primary-500: hsl(220, 13%, 91%);
+  --clr-primary-600: hsl(217, 12%, 38%);
+  --clr-primary-700: hsl(217, 91%, 60%);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --clr-accent-1: hsl(217, 91%, 60%);
+  --clr-accent-2: hsl(210, 20%, 98%);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --clr-neutral-1: hsl(214, 7%, 46%);
+  --clr-neutral-2: hsl(0, 0%, 100%);
+
+  --ff-primary: "Roboto", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-light-italic: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-bolder: 900;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.5rem;
+  --fs-600: 2.25rem;
+  --fs-700: 3rem;
 }
 
+/* Remove link decoration */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
-body {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font: inherit;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-primary);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+.text-primary-500 {
+  color: var(--clr-primary-500);
+}
+.text-primary-600 {
+  color: var(--clr-primary-600);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+.bg-primary-500 {
+  background-color: var(--clr-primary-500);
+}
+.bg-primary-600 {
+  background-color: var(--clr-primary-600);
+}
+.bg-primary-700 {
+  background-color: var(--clr-primary-700);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-bolder {
+  font-weight: var(--fw-bolder);
+}
+.fw-light-italic {
+  font-style: var(--fw-light-italic);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-700);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-600);
+}
+
+/* rectangle */
+
+.placeholder {
+  height: 238px;
+  width: 523px;
+  color: var(--clr-neutral-2);
+  background-color: var(--clr-neutral-1);
   text-align: center;
+  line-height: 238px;
+  font-size: var(--fs-400);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+/* square */
+
+.square {
+  height: 170px;
+  width: 170px;
+  border: 4px solid var(--clr-accent-1);
+  background-color: transparent;
+  border-radius: 1em;
+  float: left;
+  margin: 25px;
 }
 
-.card {
-  padding: 2em;
+.subtext {
+  text-align: center;
+  margin-top: 10.5em;
 }
 
-.read-the-docs {
-  color: #888;
+/* header */
+
+.primary-header {
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 152px;
+  width: 1025px;
+  border-radius: 1em;
+  color: var(--clr-neutral-2);
+  background-color: var(--clr-accent-1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.copyright {
+  text-align: center;
 }
